@@ -12,12 +12,21 @@ int main()
     int n,m;
     cin>>n>>m;
     vector<bool>tab;
-    for(int i=0; i<n; i++)
+    string a; cin>>a;
+    for(int i=n-1; i>=0; i--)
     {
-        int a; cin>>a;
-        tab.push_back(a);
+        if(a[i]=='1') tab.push_back(1);
+        else tab.push_back(0);
     }
     vector<bool>::iterator pom;
+    pom=tab.begin();
+    for(int i=0; i<n; i++)
+    {
+        cout<<*pom;
+        pom++;
+    }
+    cout<<endl<<endl;
+//kon
     for(int i=0; i<m; i++)
     {
        pom=tab.begin();
