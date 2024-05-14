@@ -20,13 +20,6 @@ int main()
     }
     vector<bool>::iterator pom;
     pom=tab.begin();
-    for(int i=0; i<n; i++)
-    {
-        cout<<*pom;
-        pom++;
-    }
-    cout<<endl<<endl;
-//kon
     for(int i=0; i<m; i++)
     {
        pom=tab.begin();
@@ -37,7 +30,7 @@ int main()
     pom=tab.begin();
     for(int i=0; i<n; i++)
     {
-        cout<<*pom;
+        std::cout<<*pom;
         pom++;
     }
     return 0;
