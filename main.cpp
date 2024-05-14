@@ -9,15 +9,27 @@ bool XOR (bool a, bool b)
 }
 int main()
 {
-    int n;
-    cin>>n;
+    int n,m;
+    cin>>n>>m;
     vector<bool>tab;
     for(int i=0; i<n; i++)
     {
         int a; cin>>a;
         tab.push_back(a);
     }
-    vector<bool>::iterator pom = tab.begin();
-    cout<<*pom;
+    vector<bool>::iterator pom;
+    for(int i=0; i<m; i++)
+    {
+       pom=tab.begin();
+       tab.push_back(XOR(*pom,*(pom+1)));
+        tab.erase(tab.begin());
+
+    }
+    pom=tab.begin();
+    for(int i=0; i<n; i++)
+    {
+        cout<<*pom;
+        pom++;
+    }
     return 0;
 }
