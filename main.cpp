@@ -11,12 +11,12 @@ int main()
 {
     int n,m;
     cin>>n>>m;
-    vector<bool>tab;
+    vector<bool>tab(n);
     string a; cin>>a;
     for(int i=n-1; i>=0; i--)
     {
-        if(a[i]=='1') tab.push_back(1);
-        else tab.push_back(0);
+        if(a[i]=='1') tab[i]=1; 
+        else tab[i]=0; 
     }
     vector<bool>::iterator pom;
     pom=tab.begin();
