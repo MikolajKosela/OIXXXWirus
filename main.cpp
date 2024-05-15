@@ -9,8 +9,10 @@ bool XOR (bool a, bool b)
 }
 int main()
 {
+    //wczytanie długości wirusa i ilości mutacji
     int n,m;
     cin>>n>>m;
+    //wczytanie wirusa i zapisanie go w wektorze
     vector<bool>tab(n);
     string a; cin>>a;
     for(int i=n-1; i>=0; i--)
@@ -18,16 +20,16 @@ int main()
         if(a[i]=='1') tab[i]=1; 
         else tab[i]=0; 
     }
-    vector<bool>::iterator pom;
-    pom=tab.begin();
+    //utworzenie iteratora pomocniczego, który wskazuje na początek wektora 
+    vector<bool>::iterator pom=tab.begin();
+    //mutacja
     for(int i=0; i<m; i++)
     {
-       pom=tab.begin();
        tab.push_back(XOR(*pom,*(pom+1)));
-        tab.erase(tab.begin());
+        tab.erase(pom);
 
     }
-    pom=tab.begin();
+    //wypisywanie wektora
     for(int i=0; i<n; i++)
     {
         std::cout<<*pom;
